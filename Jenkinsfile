@@ -1,5 +1,5 @@
-def registry = 'https://valaxy05.jfrog.io'
-def imageName = 'valaxy05.jfrog.io/valaxy-docker-local/ttrend'
+def registry = 'https://https://jahid112.jfrog.io'
+def imageName = 'jahid112.jfrog.io/valaxy-docker-local/ttrend'
 def version   = '2.1.4'
 pipeline {
     agent {
@@ -52,7 +52,7 @@ environment {
         steps {
             script {
                     echo '<--------------- Jar Publish Started --------------->'
-                     def server = Artifactory.newServer url:registry+"/artifactory" ,  credentialsId:"artfiact-cred"
+                     def server = Artifactory.newServer url:registry+"/artifactory" ,  credentialsId:"artifact-cred"
                      def properties = "buildid=${env.BUILD_ID},commitid=${GIT_COMMIT}";
                      def uploadSpec = """{
                           "files": [
